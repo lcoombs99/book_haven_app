@@ -19,7 +19,8 @@ const Checkout = (props) => {
   const cityInputRef = useRef();
 
   const confirmHandler = (event) => {
-    event.preventDefault(); // TODO: Complete submission logic
+    event.preventDefault();
+
     const enteredName = nameInputRef.current.value;
     const enteredAddress = addressInputRef.current.value;
     const enteredPostal = postalInputRef.current.value;
@@ -36,6 +37,7 @@ const Checkout = (props) => {
       city: enteredCityIsValid,
       postal: enteredPostalIsValid
     });
+
     const formIsValid =
       enteredNameIsValid &&
       enteredAddressIsValid &&
@@ -44,8 +46,7 @@ const Checkout = (props) => {
     if (!formIsValid) {
       return;
     }
-    // TODO: Submit cart and customer data to Firebase backend
-    // Pass validated customer details to parent submit handler
+
     props.onConfirm({
       name: enteredName,
       address: enteredAddress,
@@ -53,6 +54,7 @@ const Checkout = (props) => {
       postal: enteredPostal
     });
   };
+
   const nameControlClasses = `${classes.control} ${formInputValidity.name ? '' : classes.invalid}`;
   const addressControlClasses = `${classes.control} ${formInputValidity.address ? '' : classes.invalid}`;
   const postalControlClasses = `${classes.control} ${formInputValidity.postal ? '' : classes.invalid}`;

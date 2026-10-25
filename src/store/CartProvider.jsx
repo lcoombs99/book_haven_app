@@ -7,7 +7,6 @@ const cartReducer = (state, action) => {
     if (action.type === 'ADD') {
       const updatedTotalAmount =
         state.totalAmount + action.item.price * action.item.amount;
-      // const updatedItems = state.items.concat(action.item);
 
       // Search if the book is already in our cart array
       const existingCartItemIndex = state.items.findIndex(

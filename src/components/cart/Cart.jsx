@@ -32,7 +32,10 @@ const Cart = (props) => {
     await fetch('https://book-haven-app-76046-default-rtdb.firebaseio.com/orders.json', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({user: userData, orderedItems: cartCtx.items})
+      body: JSON.stringify({
+        user: userData,
+        orderedItems: cartCtx.items
+      })
     });
     setIsSubmitting(false);
     setDidSubmit(true);

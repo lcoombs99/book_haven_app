@@ -67,6 +67,7 @@ const AvailableBooks = () => {
         price={book.price}
       />
     ));
+
     return (
       <section className={classes.books}>
         <Card>
